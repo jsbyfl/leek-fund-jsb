@@ -2,6 +2,8 @@ import { Layout, Space, Divider, Button, Switch } from 'antd';
 import { postMessage } from '@/utils/common';
 const { Footer } = Layout;
 
+document.body.classList['add']('mode-moyu');
+
 export default function LFooter() {
   return (
     <Footer style={{ lineHeight: '32px' }}>
@@ -10,7 +12,7 @@ export default function LFooter() {
           老板模式：
           <Switch
             onChange={(checked) => {
-              document.body.classList[checked ? 'add' : 'remove']('mode-moyu');
+              //document.body.classList[checked ? 'add' : 'remove']('mode-moyu');
             }}
             size="small"
           />

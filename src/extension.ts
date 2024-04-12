@@ -92,9 +92,9 @@ export function activate(context: ExtensionContext) {
     treeDataProvider: forexProvider,
   });
 
-  window.createTreeView('leekFundView.news', {
-    treeDataProvider: newsProvider,
-  });
+  // window.createTreeView('leekFundView.news', {
+  //   treeDataProvider: newsProvider,
+  // });
 
   // fix when TreeView collapse https://github.com/giscafer/leek-fund/issues/31
   const manualRequest = () => {
@@ -142,6 +142,7 @@ export function activate(context: ExtensionContext) {
   };
 
   const setIntervalTime = () => {
+    return;
     // prevent qps
     if (intervalTime < 3000) {
       intervalTime = 3000;

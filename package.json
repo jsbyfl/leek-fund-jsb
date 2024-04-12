@@ -1,8 +1,8 @@
 {
-  "name": "leek-fund",
-  "displayName": "韭菜盒子",
+  "name": "leek-fund-jsb",
+  "displayName": "韭菜盒子-jsb",
   "description": "韭菜盒子，VSCode 里也可以看股票 & 基金实时数据，做最好用的投资插件",
-  "version": "3.7.1",
+  "version": "1.0.0",
   "author": "giscafer <giscafer@outlook.com>",
   "repository": {
     "type": "git",
@@ -52,10 +52,6 @@
         {
           "id": "leekFundView.stock",
           "name": "Stock"
-        },
-        {
-          "id": "leekFundView.news",
-          "name": "XueQiu News"
         },
         {
           "id": "leekFundView.binance",
@@ -569,7 +565,7 @@
         },
         "leek-fund.interval": {
           "type": "number",
-          "default": 5000,
+          "default": 9999000,
           "description": "配置轮询请求最新数据的时间间隔，单位：毫秒（最小轮询间隔是3秒）"
         },
         "leek-fund.riseColor": {
@@ -712,15 +708,10 @@
       {
         "view": "leekFundView.news",
         "contents": "无数据，请检查网络或添加关注用户"
-      },
-      {
-        "view": "leekFundView.settings",
-        "contents": "\n [🏠️ 韭菜中心](command:leek-fund.leekCenterView) \n [🎨个性定制](command:leek-fund.customSetting)\n[💰赞助插件](command:leek-fund.donate)\n[📄使用文档](https://github.com/LeekHub/leek-fund/issues/371)\n[📚投资交流](https://github.com/LeekHub/leek-fund/issues/19)\n源码[Github](https://github.com/LeekHub/leek-fund)"
       }
     ]
   },
   "scripts": {
-    "vscode:prepublish": "yarn run compile",
     "compile": "tsc -p ./",
     "postcompile": "yarn --cwd ./template-packages/leek-center run build",
     "lint": "eslint src --fix --ext ts  --ignore-path .gitignore",
@@ -735,12 +726,6 @@
   "config": {
     "commitizen": {
       "path": "cz-customizable"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "commit-msg": "npm run commitmsg"
     }
   },
   "lint-staged": {

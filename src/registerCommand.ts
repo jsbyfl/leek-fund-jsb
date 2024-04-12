@@ -201,15 +201,15 @@ export function registerViewEvent(
    * WebView
    */
   // 股票点击
-  context.subscriptions.push(
-    commands.registerCommand('leek-fund.stockItemClick', (code, name, text, stockCode) =>
-      stockTrend(code, name, stockCode)
-    )
-  );
+  // context.subscriptions.push(
+  //   commands.registerCommand('leek-fund.stockItemClick', (code, name, text, stockCode) =>
+  //     stockTrend(code, name, stockCode)
+  //   )
+  // );
   // 基金点击
-  context.subscriptions.push(
-    commands.registerCommand('leek-fund.fundItemClick', (code, name) => fundTrend(code, name))
-  );
+  // context.subscriptions.push(
+  //   commands.registerCommand('leek-fund.fundItemClick', (code, name) => fundTrend(code, name))
+  // );
   // 基金右键历史信息点击
   commands.registerCommand('leek-fund.viewFundHistory', (item) => fundHistory(item));
   // 基金持仓
