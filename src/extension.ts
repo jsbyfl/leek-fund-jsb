@@ -93,9 +93,9 @@ export function activate(context: ExtensionContext) {
     treeDataProvider: forexProvider,
   });
 
-  window.createTreeView('leekFundView.news', {
-    treeDataProvider: newsProvider,
-  });
+  // window.createTreeView('leekFundView.news', {
+  //   treeDataProvider: newsProvider,
+  // });
 
   // fix when TreeView collapse https://github.com/giscafer/leek-fund/issues/31
   const manualRequest = () => {
@@ -144,41 +144,41 @@ export function activate(context: ExtensionContext) {
 
   const setIntervalTime = () => {
     // prevent qps
-    if (intervalTime < 3000) {
-      intervalTime = 3000;
-    }
-    if (loopTimer) {
-      clearInterval(loopTimer);
-      loopTimer = null;
-    }
+    // if (intervalTime < 3000) {
+    //   intervalTime = 3000;
+    // }
+    // if (loopTimer) {
+    //   clearInterval(loopTimer);
+    //   loopTimer = null;
+    // }
 
-    loopTimer = setInterval(loopCallback, intervalTime);
+    // loopTimer = setInterval(loopCallback, intervalTime);
 
-    /* 虚拟币不休市 */
-    if (binanceLoopTimer) {
-      clearInterval(binanceLoopTimer);
-      binanceLoopTimer = null;
-    }
-    binanceLoopTimer = setInterval(
-      () => {
-        if (binanceTreeView?.visible) {
-          binanceProvider.refresh();
-        }
-      },
-      // intervalTimeConfig < 3000 ? 3000 : intervalTimeConfig
-      300000 // 该功能存在网络问题（一些网络有vpn都无法请求通），这里故意设置长时间
-    );
+    // /* 虚拟币不休市 */
+    // if (binanceLoopTimer) {
+    //   clearInterval(binanceLoopTimer);
+    //   binanceLoopTimer = null;
+    // }
+    // binanceLoopTimer = setInterval(
+    //   () => {
+    //     if (binanceTreeView?.visible) {
+    //       binanceProvider.refresh();
+    //     }
+    //   },
+    //   // intervalTimeConfig < 3000 ? 3000 : intervalTimeConfig
+    //   300000 // 该功能存在网络问题（一些网络有vpn都无法请求通），这里故意设置长时间
+    // );
 
-    /* 汇率变化轮询间隔2分钟 */
-    if (forexLoopTimer) {
-      clearTimeout(forexLoopTimer);
-      forexLoopTimer = null;
-    }
-    forexLoopTimer = setInterval(() => {
-      if (forexTreeView?.visible) {
-        forexProvider.refresh();
-      }
-    }, 120000);
+    // /* 汇率变化轮询间隔2分钟 */
+    // if (forexLoopTimer) {
+    //   clearTimeout(forexLoopTimer);
+    //   forexLoopTimer = null;
+    // }
+    // forexLoopTimer = setInterval(() => {
+    //   if (forexTreeView?.visible) {
+    //     forexProvider.refresh();
+    //   }
+    // }, 120000);
   };
 
   setIntervalTime();

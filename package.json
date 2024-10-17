@@ -1,8 +1,8 @@
 {
-  "name": "leek-fund",
-  "displayName": "韭菜盒子",
-  "description": "韭菜盒子，VSCode 里也可以看股票 & 基金实时数据，做最好用的投资插件",
-  "version": "3.12.1",
+  "name": "leek-fund-jsb",
+  "displayName": "韭菜盒子-jsb",
+  "description": "韭菜盒子-jsb, release date: 2024-10-17 20:20",
+  "version": "1.1.0",
   "author": "giscafer <giscafer@outlook.com>",
   "repository": {
     "type": "git",
@@ -52,10 +52,6 @@
         {
           "id": "leekFundView.stock",
           "name": "Stock"
-        },
-        {
-          "id": "leekFundView.news",
-          "name": "XueQiu News"
         },
         {
           "id": "leekFundView.binance",
@@ -283,14 +279,6 @@
       {
         "command": "leek-fund.toggleStatusBarVisibility",
         "title": "LeekFund: Toggle Status Bar Visibility"
-      },
-      {
-        "command": "leek-fund.binanceSort",
-        "title": "升序/降序/不排序",
-        "icon": {
-          "light": "resources/light/sort.svg",
-          "dark": "resources/dark/sort.svg"
-        }
       }
     ],
     "menus": {
@@ -382,11 +370,6 @@
         },
         {
           "command": "leek-fund.addBinancePair",
-          "when": "view == leekFundView.binance",
-          "group": "navigation"
-        },
-        {
-          "command": "leek-fund.binanceSort",
           "when": "view == leekFundView.binance",
           "group": "navigation"
         },
@@ -537,11 +520,6 @@
           "default": {},
           "description": "股票持仓金额（不建议手填，格式错误影响功能）"
         },
-        "leek-fund.stockHeldTipShow": {
-          "type": "boolean",
-          "default": false,
-          "description": "是否开启股票持仓提示"
-        },
         "leek-fund.funds": {
           "type": "array",
           "default": [
@@ -587,7 +565,7 @@
         },
         "leek-fund.interval": {
           "type": "number",
-          "default": 5000,
+          "default": 9999000,
           "description": "配置轮询请求最新数据的时间间隔，单位：毫秒（最小轮询间隔是3秒）"
         },
         "leek-fund.riseColor": {
@@ -730,10 +708,6 @@
       {
         "view": "leekFundView.news",
         "contents": "无数据，请检查网络或添加关注用户"
-      },
-      {
-        "view": "leekFundView.settings",
-        "contents": "\n [🏠️ 韭菜中心](command:leek-fund.leekCenterView) \n [🎨个性定制](command:leek-fund.customSetting)\n[💰赞助插件](command:leek-fund.donate)\n[📄使用文档](https://github.com/LeekHub/leek-fund/issues/371)\n[📚投资交流](https://github.com/LeekHub/leek-fund/issues/19)\n源码[Github](https://github.com/LeekHub/leek-fund)"
       }
     ]
   },
