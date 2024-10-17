@@ -755,12 +755,6 @@
       "path": "cz-customizable"
     }
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "commit-msg": "npm run commitmsg"
-    }
-  },
   "lint-staged": {
     "src/**/*.{js,ts,tsx}": [
       "prettier --write",
